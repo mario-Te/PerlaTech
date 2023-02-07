@@ -1,13 +1,390 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: local("☺"), url("../public/Fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: local("☺"), url("../public/Fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/********/
+:root {
+  /** Fonts family variables **/
+  --montserrat-regular: "Montserrat-Regular";
+  --montserrat-bold: "Montserrat-Bold";
+  /********Font sizes */
+  --xs-font: 12px;
+  --s-font: 14px;
+  --ms-font: 16px;
+  --ls-font: 17px;
+  /*******/
+  --xm-font: 20px;
+  --sm-font: 1.375rem; /* 22px */
+  --mm-font: 1.625rem; /* 26px */
+  --lm-font: 1.75rem; /* 28px */
+  /*******/
+  --xb-font: 2rem;
+  --sb-font: 2.2; /* 35px */
+  --mb-font: 2.5; /* 38px */
+  --lb-font: 2.75rem; /* 41px */
+}
+/***********General*****/
+/* Fonts Family */
+
+.montserrat-regular {
+  font-family: var(--montserrat-regular);
+}
+.montserrat-bold {
+  font-family: var(--montserrat-bold);
+}
+.black
+{
+  color: black;
+}
+input:focus {
+  outline: none;
+}
+.w-90
+{
+  width:90%
+}
+.w-10
+{
+  width:10%
+}
+.Login .oranged {
+  color:#ED9D99
+}
+.Login .input , .Login .input input
+{
+  background-color: #F2F2F2;
+  border-radius: 10px;
+  border-color: transparent !important;
+}
+.Login .react-tel-input .form-control
+{
+  width: 100%;
+  background-color: #F2F2F2;
+}
+.Login button
+{
+background: linear-gradient(266.31deg, #56CCF2 0%, #3B7EC5 100%);
+border-radius: 10px;
+color:white;
+border:0px;
+padding:6px !important;
+}
+.Login .top-100
+{
+  margin-top:130px
+}
+.Login .forget-password,.Login .icons
+{
+  display: flex;
+  justify-content: space-between
+}
+.Login .forget-password a
+{ 
+  text-decoration: none;
+}
+.Login .icons img
+{
+  vertical-align: top;
+  border-radius:50%;
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+.Login .img-right 
+{
+  background-color:  rgba(209, 77, 205,.3);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  height: 700px;
+  
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.Login .img-right img
+{
+  opacity: 1 !important;
+  position: relative;
+  bottom: 0px;
+  top:-40px;
+  right: 103px;
+}
+/*------*/
+.navbar
+{
+  background-color: #E5E5E5;
+}
+.navbar .nav-link 
+{
+  
+font-size: 16px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+font-family: var(--montserrat-regular);
+font-style: normal;
+}
+.navbar .nav-item:hover > *
+{
+  font-weight: 500;
+}
+.navbar .nav-item :hover >img
+{
+ 
+  filter: brightness(1);
+  filter: sepia(65%) 
+}
+
+.navbar .nav-button
+{
+  background: linear-gradient(266.31deg, #56CCF2 0%, #3B7EC5 100%);
+border-radius: 10px;
+border:0px;
+margin-left:40px;
+}
+
+.navbar .nav-button img
+{
+  width:20px;
+  background-color: transparent;
+  object-fit: cover;
+  margin-right: 15px;
+}
+.navbar .nav-button .nav-link
+{
+  color:white;
+ margin-right: 15px;
+}
+.navbar .LoggedInIcons
+{
+  display: flex;
+}
+.navbar .LoggedInIcons img.User
+{
+  
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  
+}
+.navbar #basic-nav-dropdown::after
+{
+  display: none;
+}
+/****Homepage **/
+.Homepage .card img{
+  height:250px;
+  object-fit: fill;
+}
+.Homepage .card {
+  width : 24%;
+  
+border: 1px solid rgba(251, 154, 11, 0.5);
+border-radius: 15px;
+ }
+.Homepage .card img.icon{
+  width: 15px;
+  height:15px
+}
+.Homepage .card span.tutor
+{
+  font-family:  var(--montserrat-regular);
+font-size: 14px;
+font-weight: 400;
+line-height: 17px;
+letter-spacing: 0em;
+text-align: left;
+color: #828282;
+}
+.Homepage p.info
+{
+  font-family:  var(--montserrat-regular);
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+color: #201d1d;
+height: 180px;
+
+}
+.Homepage .card p.name{
+  height:40px;
+  font-family:  var(--montserrat-regular);
+font-size: 17px;
+font-weight: 600;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.Homepage .card .hint-star svg
+{
+color:#F2C94C;
+}
+.Homepage .card .vl 
+{
+  margin-top: 10px;
+  border-top: 1px solid rgba(251, 154, 11, 0.5);
+}
+.Homepage .card .vl p.newprice
+{
+  font-family:  var(--montserrat-regular);
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+color: #333333;
+width: 50%;
+}
+
+.Homepage .card .vl p.oldprice
+{
+  font-family:  var(--montserrat-regular);
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 20px;
+width: 30%;
+/* identical to box height */
+text-decoration-line: line-through;
+color: #EB5757;
+
+}
+.Homepage .card .badge-red{
+background: #EB5757;
+border-radius: 2px;
+font-family:  var(--montserrat-regular);
+font-style: normal;
+width: 20%;
+font-size:9px;
+/* identical to box height */
+color: #FFFFFF;
+max-height: 20px;
+}
+
+.Homepage .post-container
+{
+  background: linear-gradient(246.61deg, rgba(251, 154, 11, 0.05) 0%, rgba(59, 126, 197, 0.05) 100%);
+border-radius: 20px;
+}
+.Homepage .post-header{
+  display: inline-flex;
+}
+.Homepage .post-header .link
+{
+  padding-top: 10px;  
+  padding-inline-start: 50px;
+
+}
+.Homepage .post-header .link a 
+{
+  text-decoration: none; 
+  font-size: 16px !important;
+  
+font-family:  var(--montserrat-regular);
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px; 
+}
+.Homepage .post-container h1.info
+{ 
+font-family: var(--montserrat-regular);
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 39px;
+border-bottom: 1px solid black;
+color: #333333;
+
+
+}
+.Homepage .post-container h1.info {border-bottom:2px solid black; padding-bottom:15px; position:relative;}
+.Homepage .post-container h1.info:after { position:absolute; bottom:-6px; left:0; height:10px; width:10px; background:black; content:""; border-radius:5px;}
+.Homepage .post-container h1.info:after {right:0; left:auto;}
+.Homepage .post-container span.vl { position:absolute; left:0; border-bottom: 
+  2px solid black ;padding-bottom:30px; width: 155px;}
+
+.Homepage .post-header .arrows
+{
+  position: relative;
+  left: 134%;
+  top:15%
+}
+.Homepage .post-header .arrows svg{
+  height: 30px;
+  width: 50px;
+  color:#3B7EC5;
+  padding-inline-start: 50px;
+  padding:15px
+}
+.Homepage  .post-wrapper
+{
+  margin-top: 10px;
+  position: relative;
+  margin-left: 4%;
+  width: 120%;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 1200px)
+{
+.Homepage .post-container span.vl {display: none;}
+}
+@media screen and (max-width: 576px)
+{
+.Homepage .card {
+  width: 100%;
+  margin-top: 5px;
+}
+.Homepage .post-header{
+  display: block;
+}
+.Homepage .post-container h1.info
+{
+  font-size: 23px;
+}
+
+.Homepage .post-header .arrows
+{
+  position: relative;
+  left: 34%;
+  top:15%
+}
+.Homepage .card p.name{
+font-size: 15px;
+}
+.Homepage .card p.info{
+  font-size: 12px;
+  height:200px
+  }
+  .Homepage .card .vl p.newprice
+  {
+    font-size: 13px;
+    width: 40%;
+  }
+  .Homepage .card .vl p.oldprice
+  {
+    width:40%;
+  }
+  .Homepage .post-header .link
+{
+  padding-top: 0px;  
+  padding-inline-start: 5px;
+  
+}
+.Homepage .post-header .link a
+{
+  font-size: 12px !important;
+}
 }
