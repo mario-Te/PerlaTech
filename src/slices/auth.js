@@ -1,14 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { setMessage } from "./message";
 import AuthService from "../services/auth.service";
-const user = JSON.parse(localStorage.getItem("user"));
+let user ;
 
 
 export const login = createAsyncThunk(
   "User/log_in",
-  async ({phone, passwordInput}, thunkAPI) => {
+  async ({phone, password}, thunkAPI) => {
     try {
-      const data = await AuthService.login(phone, passwordInput);
+     
+      const data = await AuthService.login(phone, password);
       return { user: data };
     } catch (error) {
       
@@ -36,7 +37,7 @@ const authSlice = createSlice({
      logout: (state) => {
     state.isLoggedIn = false;
     state.user = null;
-    localStorage.removeItem("user");
+    
   }
   },
   extraReducers: {

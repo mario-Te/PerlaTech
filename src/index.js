@@ -7,10 +7,15 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import './index.css';
 import store from "./store/index";
 import { Provider } from "react-redux";
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistStore } from 'redux-persist';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+let persistor = persistStore(store);
 root.render(
     <Provider store={store}>
-        <App />
+        <PersistGate loading={null} persistor={persistor}>
+          <App/>
+      </PersistGate>
     </Provider>
 );
 

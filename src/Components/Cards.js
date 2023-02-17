@@ -3,7 +3,7 @@ import { faStar} from "@fortawesome/fontawesome-free-solid";
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons'
 const Cards =(post)=>
 (
-<div className="col-md-3 col-12 card p-2" >
+<div className="col-md-3 col-6 card p-2" >
 <img src={post.Image} alt="" className="p-2"/>
 <div className="d-block my-2">
 <img src="/images/icons/UserIcon.png" alt="" className="icon"/> <span className="tutor">{post.Tutor}</span>
