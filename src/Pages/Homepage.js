@@ -54,7 +54,7 @@ const Homepage=()=>
             Top Trending Courses
           </Typography>
           <Link to="/" component={RouterLink} underline="none" sx={{fontFamily: 'Montserrat-regular',
-            fontSize: {md:'12px',lg:'16px'},
+            fontSize: {xs:'12px',md:'16px'},
             fontWeight: '300',
             lineHeight: '20px',
             letterSpacing: '0.1em',

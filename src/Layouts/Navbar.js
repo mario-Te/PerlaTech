@@ -133,6 +133,9 @@ function ResponsiveAppBar() {
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography  textAlign="center">Features</Typography>
                 </MenuItem>
+                {isLoggedIn &&<MenuItem  onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center" onClick={logOut}>Logout</Typography>
+                </MenuItem>}
              
             </Menu>
           </Box>
