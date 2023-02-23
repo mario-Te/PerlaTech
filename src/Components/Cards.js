@@ -9,8 +9,8 @@ const Cards =(post)=>
 <img src="/images/icons/UserIcon.png" alt="" className="icon"/> <span className="tutor">{post.Tutor}</span>
 </div>
 
-<p className="name px-1"><b>{post.Name}</b></p>
-<p className="info px-1">{post.Description}</p>
+<p className="name px-1 mb-2"><b>{post.Name}</b></p>
+<p className="info px-1 ">{post.Description}</p>
 <span className="hint-star star">
 {Array.apply(null, { length: post.Rating }).map((_, i) => (
  <FontAwesomeIcon icon={faStar} key={i} />

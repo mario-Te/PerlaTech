@@ -231,11 +231,12 @@ line-height: 20px;
 letter-spacing: 0em;
 text-align: left;
 color: #201d1d;
-height: 180px;
+height: 100px;
+overflow-y: scroll;
 
 }
 .Homepage .card p.name{
-  height:40px;
+  height:80px;
   font-family:  var(--montserrat-regular);
 font-size: 17px;
 font-weight: 600;
@@ -357,7 +358,8 @@ color: #333333;
 {
 .Homepage .post-container span.vl {display: none;}
 .Homepage .card {
-  width: 49%;
+  width: 40%;
+ 
   margin-top: 5px;
 }
 }
@@ -373,7 +375,7 @@ color: #333333;
     width: fit-content;
   }
 .Homepage .card {
-  width: 60%;
+  width: 45%;
   
   margin-top: 5px;
 }
@@ -382,7 +384,7 @@ color: #333333;
 }
 .Homepage .post-container h1.info
 {
-  font-size: 23px;
+  font-size: 16px;
 }
 
 .Homepage .post-header .arrows
@@ -396,7 +398,7 @@ font-size: 15px;
 }
 .Homepage .card p.info{
   font-size: 12px;
-  height:200px
+  height:100px
   }
   .Homepage .card .vl p.newprice
   {

@@ -28,7 +28,7 @@ const Homepage=()=>
     return < >
         <NavBar/>
         <div className="Homepage">
-          <Box sx={{mt:4,display:'block',direction:'row'}} nowrap>
+          <Box sx={{mt:{xs:6,md:4},display:'block',direction:'row'}} nowrap>
     
           <Typography
             variant="span"
@@ -54,7 +54,7 @@ const Homepage=()=>
             Top Trending Courses
           </Typography>
           <Link to="/" component={RouterLink} underline="none" sx={{fontFamily: 'Montserrat-regular',
-            fontSize: '16px',
+            fontSize: {md:'12px',lg:'16px'},
             fontWeight: '300',
             lineHeight: '20px',
             letterSpacing: '0.1em',
@@ -78,7 +78,9 @@ const Homepage=()=>
             }}
             onClick={()=>{setSlideIndex(state=>state-1)}}
            >
+           
              <img  src= {SlideIndex===0?"/images/icons/Arrow-RightIcon.png":"/images/icons/Arrow-RightIconDisabled.png"}  alt=""/>
+            
           </Typography>
           <Typography
             variant="span"
@@ -98,8 +100,8 @@ const Homepage=()=>
              <img  src={SlideIndex==postList.length?"/images/icons/Arrow-LeftIcon.png":"/images/icons/Arrow-LeftIconDisabled.png"}  alt=""/>
           </Typography>
           </Box>
-          <Box sx={{position:'absolute',top:'100px',background:'linear-gradient(246.61deg, rgba(251, 154, 11, 0.05) 0%, rgba(59, 126, 197, 0.05) 100%);',left:{sm:'0',md:'30px',lg:'50px'},right:{sm:0,md:'500px'}}} nowrap>
-            <Box sx={{mt:'100px',ml:{sm:0,md:'120px'},display:'flex',width:{xs:'25%',sm:'100%'},justifyContent:'space-between',overflowX:'hidden'}}>
+          <Box sx={{position:'absolute',top:'100px',background:'linear-gradient(246.61deg, rgba(251, 154, 11, 0.05) 0%, rgba(59, 126, 197, 0.05) 100%);',left:{sm:'0',md:'30px',lg:'50px'},right:{sm:0,md:'300px',lg:'500px'}}} nowrap>
+            <Box sx={{mt:'100px',ml:{sm:0,md:'40px'},display:'flex',width:{xs:'25%',sm:'100%',md:'130%'},justifyContent:'space-between',overflowX:'hidden'}}>
               <Box sx={{transform:{sm:`translateX(-${(SlideIndex)*50}%)`,lg:`translateX(-${(SlideIndex)*25}%)`},width:'100%',display:'flex'}}>
             {postList.map((post) => (
              <Cards {...post} key={post.Id}/>
