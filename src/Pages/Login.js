@@ -8,6 +8,7 @@ import 'react-phone-input-2/lib/style.css';
 import {login} from "../slices/auth";
 import {clearMessage} from "../slices/message"
 import { useNavigate } from "react-router-dom"
+import { makeStyles } from '@mui/styles';
 import {
   Link,
   TextField,
@@ -23,10 +24,36 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import { faEye,faEyeSlash,faArrowRight,faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 library.add(faEye,faEyeSlash,faArrowRight,faArrowLeft);
 
-
+const useStyles = makeStyles({
+  root: {
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    border: 0,
+    borderRadius: 3,
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+  },
+  leftArrow:{
+    width:'8%',
+    textAlign:'center'
+  },
+ 
+  error:
+  {
+    display: 'block',
+    flexGrow: 1,
+    fontWeight: 300,
+    color: '#fff',
+    backgroundColor:'#dc3545 ',
+    my:1,
+    borderRadius:'15px'
+  },
+});
 
 const Login=()=>
 {
+  const classes = useStyles();
   const [loading, setLoading] = useState(false);
   let navigate=useNavigate();
   const { isLoggedIn,user } = useSelector((state) => state.auth);
@@ -100,12 +127,29 @@ useEffect(() => {
     return (
     <Box sx={{my:5 ,display:'flex'}} className="Login">
       
-        <Box sx={{width:'8%',textAlign:'center'}}>
+        <Box className={classes.leftArrow}>
             <h3><Link to="/" component={RouterLink}>  <FontAwesomeIcon icon="arrow-left"/></Link></h3>
         </Box>
-        <Box sx={{textAlign:'center',width:{xs: '85%', md: '50%'}}}>
+        <Box sx={{ textAlign:'center',width:{xs: '85%', md: '50%'}}}>
             <h1 ><b>Login </b></h1>
-            
+          
+        <Box
+        component="img"
+          sx={{
+         height:'30%',
+         mt:5,
+         width:'60%',
+         ml:'20%',
+         objectFit:'conver',
+         display:{xs:'block',sm:'none'},
+         textAlign:'center',
+         mr:1 
+         }}
+        alt="The house from the offer."
+      src="/images/torbet.png"
+       />
+       
+
             <Box sx={{borderRadius:'0.625rem',textAlign:'center',width:{xs: '100%', md: '50%'},p:1,mx:{xs:0,md:15,lg:25},mt:10,border:'1px solid #d2d2d2'}}>
               
                 <form className="mt-3" onSubmit={(e)=>{e.preventDefault();handleSubmit();}} >
@@ -123,15 +167,7 @@ useEffect(() => {
                {errorPhone &&<Typography
             variant="p"
             noWrap
-            sx={{
-              display: 'block',
-              flexGrow: 1,
-              fontWeight: 300,
-              color: '#fff',
-              backgroundColor:'#dc3545 ',
-              my:1,
-              borderRadius:'15px'
-            }}
+           className={classes.error}
           >
           Phone Number is required
           </Typography>}
@@ -163,15 +199,7 @@ useEffect(() => {
                  {errorPass&&<Typography
             variant="p"
             noWrap
-            sx={{
-              display: 'block',
-              flexGrow: 1,
-              fontWeight: 300,
-              color: '#fff',
-              backgroundColor:'#dc3545 ',
-              my:1,
-              borderRadius:'15px'
-            }}
+          className={classes.error}
           >
           Password is required
           </Typography>}
