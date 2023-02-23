@@ -10,7 +10,7 @@ const Cards =(post)=>
 </div>
 
 <p className="name px-1 mb-2"><b>{post.Name}</b></p>
-<p className="info px-1 ">{post.Description}</p>
+<p className="info px-1 ">{post.Description.slice(0,200)}</p>
 <span className="hint-star star">
 {Array.apply(null, { length: post.Rating }).map((_, i) => (
  <FontAwesomeIcon icon={faStar} key={i} />
