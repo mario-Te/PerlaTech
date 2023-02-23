@@ -74,7 +74,7 @@ const Homepage=()=>
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
-              
+              display:{xs:'none',md:'inline'}
             }}
             onClick={()=>{setSlideIndex(state=>state-1)}}
            >
@@ -86,6 +86,7 @@ const Homepage=()=>
             variant="span"
             noWrap
             sx={{
+              display:{xs:'none',md:'inline'},
               width:'fit-content',
               
               flexGrow: 1,
@@ -101,7 +102,7 @@ const Homepage=()=>
           </Typography>
           </Box>
           <Box sx={{position:'absolute',top:'100px',background:'linear-gradient(246.61deg, rgba(251, 154, 11, 0.05) 0%, rgba(59, 126, 197, 0.05) 100%);',left:{sm:'0',md:'30px',lg:'50px'},right:{sm:0,md:'300px',lg:'500px'}}} nowrap>
-            <Box sx={{mt:'100px',ml:{sm:0,md:'40px'},display:'flex',width:{xs:'25%',sm:'100%',md:'130%'},justifyContent:'space-between',overflowX:'hidden'}}>
+            <Box sx={{mt:'100px',ml:{md:0,lg:'40px'},display:'flex',width:{xs:'25%',sm:'100%',md:'130%'},justifyContent:'space-between',overflowX:'hidden'}}>
               <Box sx={{transform:{sm:`translateX(-${(SlideIndex)*50}%)`,lg:`translateX(-${(SlideIndex)*25}%)`},width:'100%',display:'flex'}}>
             {postList.map((post) => (
              <Cards {...post} key={post.Id}/>
